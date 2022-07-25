@@ -7,16 +7,17 @@ public class Movement : MonoBehaviour
     //Parameters
     [SerializeField] float thrustAmount = 1200f;
     [SerializeField] float rotateAmount = 80f;
+    [SerializeField] AudioClip ThrustSound;
     //Cache
     Rigidbody rb;
-    AudioSource audioPlay;
+    AudioSource audioSource;
     //State
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        audioPlay = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         rb.freezeRotation = false;
     }
 
@@ -33,14 +34,16 @@ public class Movement : MonoBehaviour
         if(Input.GetKey(KeyCode.Space))
         {
             ApplyThrust(thrustAmount);
-            if(audioPlay.isPlaying != true)
+            if(!audioSource.isPlaying)
             {
-                audioPlay.Play();
+                audioSource.PlayOneShot(ThrustSound);
             }
         }
-        else
+        //The code below stops other audioClips too so I had to go with another way
+            // else{audioSource.Stop();}
+        if(Input.GetKeyUp(KeyCode.Space))
         {
-            audioPlay.Stop();
+            audioSource.Stop();
         }
     }
     void BodyRotate()
