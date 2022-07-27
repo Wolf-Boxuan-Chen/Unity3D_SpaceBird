@@ -8,9 +8,15 @@ public class Movement : MonoBehaviour
     [SerializeField] float thrustAmount = 1200f;
     [SerializeField] float rotateAmount = 80f;
     [SerializeField] AudioClip ThrustSound;
+    [SerializeField] ParticleSystem mainThrustParticles;
+    [SerializeField] ParticleSystem leftThrustParticles;
+    [SerializeField] ParticleSystem rightThrustParticles;
     //Cache
     Rigidbody rb;
     AudioSource audioSource;
+
+    bool isThrusting;
+
     //State
 
     // Start is called before the first frame update
@@ -18,7 +24,7 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        rb.freezeRotation = false;
+        isThrusting = false;
     }
 
     // Update is called once per frame
@@ -26,6 +32,7 @@ public class Movement : MonoBehaviour
     {
         BodyThrust();
         BodyRotate();
+        ThrustingSoundEnabler();
     }
 
     //Move when keydown
@@ -33,40 +40,88 @@ public class Movement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Space))
         {
+            isThrusting  = true;
             ApplyThrust(thrustAmount);
-            if(!audioSource.isPlaying)
+
+            if(!mainThrustParticles.isPlaying)
             {
-                audioSource.PlayOneShot(ThrustSound);
+                mainThrustParticles.Play();
             }
         }
         //The code below stops other audioClips too so I had to go with another way
             // else{audioSource.Stop();}
-        if(Input.GetKeyUp(KeyCode.Space))
+        else if(Input.GetKeyUp(KeyCode.Space))
         {
-            audioSource.Stop();
+            isThrusting = false;
+            mainThrustParticles.Stop();
         }
     }
     void BodyRotate()
     {
+        ThrustLeft();
+        ThrustRight();
+    }
+
+    void ThrustLeft()
+    {
         if(Input.GetKey(KeyCode.A))
         {
+            isThrusting = true;
+            if(!rightThrustParticles.isPlaying)
+            {
+                rightThrustParticles.Play();
+            }
             ApplyRotation(rotateAmount);
+            
         }
-        else if(Input.GetKey(KeyCode.D))
+        else if(Input.GetKeyUp(KeyCode.A))
         {
+            isThrusting = false;
+            rightThrustParticles.Stop();
+        }
+    }
+
+    void ThrustRight()
+    {
+        if(Input.GetKey(KeyCode.D))
+        {   
+            isThrusting = true;
+            if(!leftThrustParticles.isPlaying)
+            {
+                leftThrustParticles.Play();
+            }
             ApplyRotation(-rotateAmount);
+
+        }
+        else if(Input.GetKeyUp(KeyCode.D))
+        {
+            isThrusting = false;
+            leftThrustParticles.Stop();
         }
     }
     void ApplyThrust(float thrustAmount)
     {
         rb.AddRelativeForce(Vector3.up * thrustAmount * Time.deltaTime);
     }
+
     void ApplyRotation(float rotateAmount)
     {
         rb.freezeRotation = true;
         transform.Rotate(Vector3.forward * rotateAmount * Time.deltaTime);
         rb.freezeRotation = false;
     }
-
-
+    void ThrustingSoundEnabler()
+    {
+        if (isThrusting == true)
+        {
+            if(!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(ThrustSound);
+            }
+        }
+        else
+        {
+            audioSource.Stop();
+        }
+    }
 }
