@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7894069802114415828}
   - component: {fileID: 6140645185337540308}
   - component: {fileID: 4486956897524008415}
+  - component: {fileID: 726344113}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Obstacle
@@ -57,9 +58,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e363655651aa25f498eae8dfcf3cb297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oscillateRange: {x: 5, y: 0, z: 0}
+  oscillateRange: {x: 20, y: 0, z: 0}
   oscillateDegree: 0
-  oscillateTimePeriod: 1.5
+  oscillateTimePeriod: 30
+  turnAroundAtEnd: 0
+--- !u!136 &726344113
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281259389216646062}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.91577613
+  m_Height: 3.7196536
+  m_Direction: 1
+  m_Center: {x: -0.4155624, y: -0.38220742, z: 0.11276364}
 --- !u!1 &3313935287156146019
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +90,7 @@ GameObject:
   - component: {fileID: 8314874431343746994}
   m_Layer: 0
   m_Name: CloudCapsuleShape
-  m_TagString: Friendly
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,10 +168,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.34921277
-  m_Height: 1.7036097
+  m_Radius: 0.2696524
+  m_Height: 1.7036096
   m_Direction: 1
-  m_Center: {x: -0.02410041, y: 0.0435968, z: 0.083560646}
+  m_Center: {x: -0.024100408, y: 0.043596804, z: 0.163121}
 --- !u!1 &3530915938217313404
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +186,7 @@ GameObject:
   - component: {fileID: 5472051681908596353}
   m_Layer: 0
   m_Name: CloudSphereShape (3)
-  m_TagString: Friendly
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,8 +265,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.36010402
-  m_Center: {x: 0.0433009, y: -0.000000005005257, z: 0.09659508}
+  m_Radius: 0.3028176
+  m_Center: {x: 0.0433009, y: -0.000000005005257, z: 0.054747023}
 --- !u!1 &5034114498154445518
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +281,7 @@ GameObject:
   - component: {fileID: 5838617322438964955}
   m_Layer: 0
   m_Name: CloudSphereShape (2)
-  m_TagString: Friendly
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -344,8 +360,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.39328393
-  m_Center: {x: 0.044047717, y: -0.000000005098303, z: 0.06266839}
+  m_Radius: 0.2747662
+  m_Center: {x: 0.028865824, y: -0.06139991, z: -0.028601985}
 --- !u!1 &7294959789636961429
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +376,7 @@ GameObject:
   - component: {fileID: 3441173930245009206}
   m_Layer: 0
   m_Name: CloudSphereShape (1)
-  m_TagString: Friendly
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -439,8 +455,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3739893
-  m_Center: {x: -0.019762894, y: 0.000000002281676, z: 0.07630946}
+  m_Radius: 0.28409472
+  m_Center: {x: -0.06610862, y: 0.000000007628572, z: 0.055133294}
 --- !u!1 &7356694585913855952
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +471,7 @@ GameObject:
   - component: {fileID: 7862017283318868099}
   m_Layer: 0
   m_Name: CloudSphereShape
-  m_TagString: Friendly
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,5 +550,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.34912843
-  m_Center: {x: 0.048450366, y: -0.0000000055850786, z: 0.10242125}
+  m_Radius: 0.28226972
+  m_Center: {x: 0.0089649595, y: -0.0000000010324054, z: 0.041449416}

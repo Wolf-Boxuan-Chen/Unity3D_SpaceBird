@@ -33,6 +33,8 @@ public class Movement : MonoBehaviour
         BodyThrust();
         BodyRotate();
         ThrustingSoundEnabler();
+        quitGame();
+
     }
 
     //Move when keydown
@@ -122,6 +124,14 @@ public class Movement : MonoBehaviour
         else
         {
             audioSource.Stop();
+        }
+    }
+
+    void quitGame()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 }

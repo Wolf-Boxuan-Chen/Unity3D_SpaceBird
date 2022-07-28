@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3033891458896119836}
+  - component: {fileID: 1406001}
+  - component: {fileID: 1405999}
   m_Layer: 0
   m_Name: Car
   m_TagString: Obstacle
@@ -25,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 349408547329737481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.02, y: 0.161, z: -2.281}
-  m_LocalScale: {x: 1.4724, y: 1.4724, z: 1.4724}
+  m_LocalScale: {x: 1.4724, y: 1.4724, z: 1.668818}
   m_Children:
   - {fileID: 3317104392406236730}
   - {fileID: 5972474442214806368}
@@ -35,6 +37,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1406001
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349408547329737481}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &1405999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349408547329737481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d626703b0e6b48f45965fa90b951a8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingPath: {x: 35, y: 5, z: 0}
+  moveTime: 3
 --- !u!1001 &5640627143732182428
 PrefabInstance:
   m_ObjectHideFlags: 0
