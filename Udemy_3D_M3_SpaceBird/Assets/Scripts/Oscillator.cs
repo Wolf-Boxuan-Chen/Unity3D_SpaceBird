@@ -23,6 +23,7 @@ public class Oscillator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Oscillate();
         Rotator();
     }
     void Oscillate()

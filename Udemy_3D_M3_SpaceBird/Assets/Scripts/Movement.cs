@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     [SerializeField] ParticleSystem mainThrustParticles;
     [SerializeField] ParticleSystem leftThrustParticles;
     [SerializeField] ParticleSystem rightThrustParticles;
+    [SerializeField] Vector3 initialSpeed;
     //Cache
     Rigidbody rb;
     AudioSource audioSource;
@@ -25,6 +26,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         isThrusting = false;
+        ApplyInitialSpeed();
     }
 
     // Update is called once per frame
@@ -38,6 +40,10 @@ public class Movement : MonoBehaviour
     }
 
     //Move when keydown
+    void ApplyInitialSpeed()
+    {
+        rb.AddRelativeForce(initialSpeed);
+    }
     void BodyThrust()
     {
         if(Input.GetKey(KeyCode.Space))

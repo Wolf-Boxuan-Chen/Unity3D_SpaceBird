@@ -942,14 +942,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485515549}
-  m_LocalRotation: {x: 0.10085128, y: -0.0633356, z: 0.0064333933, w: 0.9928627}
-  m_LocalPosition: {x: -6.3527226, y: 26.32041, z: -47.57409}
+  m_LocalRotation: {x: 0.09044871, y: -0.06339949, z: 0.005769804, w: 0.9938643}
+  m_LocalPosition: {x: -6.4020815, y: 27.779356, z: -47.188793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1295307925}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 11.6, y: -7.3, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.4, y: -7.3, z: 0}
 --- !u!1001 &510309731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2508,8 +2508,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.10085128, y: -0.0633356, z: 0.0064333933, w: 0.9928627}
-  m_LocalPosition: {x: -6.3527226, y: 26.32041, z: -47.57409}
+  m_LocalRotation: {x: 0.09044871, y: -0.06339949, z: 0.005769804, w: 0.9938643}
+  m_LocalPosition: {x: -6.4020815, y: 27.779356, z: -47.188793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3499,13 +3499,13 @@ MonoBehaviour:
   m_ScreenY: 0.51
   m_CameraDistance: 47.70123
   m_DeadZoneWidth: 0.43
-  m_DeadZoneHeight: 0.34
+  m_DeadZoneHeight: 0.21
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 1
   m_SoftZoneWidth: 0.95
   m_SoftZoneHeight: 0.81
   m_BiasX: 0
-  m_BiasY: -0.00000025363678
+  m_BiasY: -0.00000020204963
   m_CenterOnActivate: 0
   m_GroupFramingMode: 2
   m_AdjustmentMode: 0
@@ -4122,13 +4122,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud
       objectReference: {fileID: 0}
+    - target: {fileID: 4486956897524008415, guid: b7df829228b66464fa0467c0d3e0d1bf, type: 3}
+      propertyPath: oscillateRange.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486956897524008415, guid: b7df829228b66464fa0467c0d3e0d1bf, type: 3}
+      propertyPath: oscillateTimePeriod
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7894069802114415828, guid: b7df829228b66464fa0467c0d3e0d1bf, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894069802114415828, guid: b7df829228b66464fa0467c0d3e0d1bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.85
+      value: -22.21
       objectReference: {fileID: 0}
     - target: {fileID: 7894069802114415828, guid: b7df829228b66464fa0467c0d3e0d1bf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5221,7 +5229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 74119153603052413, guid: 3a1ca0e89cc65284897056fcaa4d48ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.0891933
+      value: -5.49
       objectReference: {fileID: 0}
     - target: {fileID: 74119153603052413, guid: 3a1ca0e89cc65284897056fcaa4d48ca, type: 3}
       propertyPath: m_LocalPosition.z
